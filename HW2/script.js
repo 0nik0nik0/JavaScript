@@ -34,7 +34,7 @@ console.log("Число " + day + " попадает в " + decade + " дека�
 //task 4
 
 let number = Number(prompt('Введите число:'));
-let hundreds = Math.floor(number / 100); //функция округления в меньшую сторону
+let hundreds = Math.floor((number % 1000) / 100); //функция округления в меньшую сторону
 let tens = Math.floor((number % 100) / 10);
 let ones = number % 10;
 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Котики</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Милые котики</h1>
+        <div id="catContent">
+            
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        document.addEventListener('catDataLoaded', function (event) {
+            const catData = event.detail;
+
+            const catImage = document.createElement('img');
+            catImage.src = catData.url;
+            catImage.alt = 'Милый котик';
+
+            const catTitle = document.createElement('h2');
+            catTitle.textContent = 'Заголовок для котика';
+
+            const catParagraph = document.createElement('p');
+            catParagraph.textContent = 'Описание котика...';
+
+            const catContent = document.getElementById('catContent');
+            catContent.appendChild(catImage);
+            catContent.appendChild(catTitle);
+            catContent.appendChild(catParagraph);
+        });
+
+    </script>
+</body>
+
+</html>
